@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package changebreaker;
+
+//Changebreaker service takes in a paid and a total
+
+message ChangeReq {
+    float paid = 1;
+    float total = 2;
+}
+
+message ChangeResp {
+    float change = 1;
+}
+
+service Changebreaker {
+    rpc Change (ChangeReq) returns (ChangeResp) {};
+}
